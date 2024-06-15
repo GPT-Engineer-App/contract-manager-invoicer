@@ -15,7 +15,7 @@ const Index = () => {
     if (newDocument) {
       setDocuments([...documents, newDocument]);
       setNewDocument("");
-      toast({ title: "Document added.", status: "success", duration: 2000, isClosable: true });
+      toast({ title: "ドキュメントが追加されました。", status: "success", duration: 2000, isClosable: true });
     }
   };
 
@@ -23,7 +23,7 @@ const Index = () => {
     if (newOrder) {
       setOrders([...orders, newOrder]);
       setNewOrder("");
-      toast({ title: "Order added.", status: "success", duration: 2000, isClosable: true });
+      toast({ title: "注文が追加されました。", status: "success", duration: 2000, isClosable: true });
     }
   };
 
@@ -31,20 +31,20 @@ const Index = () => {
     if (newPayment) {
       setPayments([...payments, newPayment]);
       setNewPayment("");
-      toast({ title: "Payment added.", status: "success", duration: 2000, isClosable: true });
+      toast({ title: "支払いが追加されました。", status: "success", duration: 2000, isClosable: true });
     }
   };
 
   const handleDelete = (type, index) => {
     if (type === "document") {
       setDocuments(documents.filter((_, i) => i !== index));
-      toast({ title: "Document deleted.", status: "info", duration: 2000, isClosable: true });
+      toast({ title: "ドキュメントが削除されました。", status: "info", duration: 2000, isClosable: true });
     } else if (type === "order") {
       setOrders(orders.filter((_, i) => i !== index));
-      toast({ title: "Order deleted.", status: "info", duration: 2000, isClosable: true });
+      toast({ title: "注文が削除されました。", status: "info", duration: 2000, isClosable: true });
     } else if (type === "payment") {
       setPayments(payments.filter((_, i) => i !== index));
-      toast({ title: "Payment deleted.", status: "info", duration: 2000, isClosable: true });
+      toast({ title: "支払いが削除されました。", status: "info", duration: 2000, isClosable: true });
     }
   };
 
@@ -52,17 +52,17 @@ const Index = () => {
     <Container centerContent maxW="container.xl" py={10}>
       <VStack spacing={8} width="100%">
         <Text fontSize="3xl" fontWeight="bold">
-          Enterprise Contract Management System
+          企業契約管理システム
         </Text>
 
         <Box width="100%">
           <Text fontSize="2xl" mb={4}>
-            Documents
+            ドキュメント
           </Text>
           <HStack mb={4}>
-            <Input placeholder="New Document" value={newDocument} onChange={(e) => setNewDocument(e.target.value)} />
+            <Input placeholder="新しいドキュメント" value={newDocument} onChange={(e) => setNewDocument(e.target.value)} />
             <Button leftIcon={<FaPlus />} colorScheme="teal" onClick={handleAddDocument}>
-              Add Document
+              ドキュメントを追加
             </Button>
           </HStack>
           <Table variant="simple">
@@ -88,12 +88,12 @@ const Index = () => {
 
         <Box width="100%">
           <Text fontSize="2xl" mb={4}>
-            Orders
+            注文
           </Text>
           <HStack mb={4}>
-            <Input placeholder="New Order" value={newOrder} onChange={(e) => setNewOrder(e.target.value)} />
+            <Input placeholder="新しい注文" value={newOrder} onChange={(e) => setNewOrder(e.target.value)} />
             <Button leftIcon={<FaPlus />} colorScheme="teal" onClick={handleAddOrder}>
-              Add Order
+              注文を追加
             </Button>
           </HStack>
           <Table variant="simple">
@@ -119,12 +119,12 @@ const Index = () => {
 
         <Box width="100%">
           <Text fontSize="2xl" mb={4}>
-            Payments
+            支払い
           </Text>
           <HStack mb={4}>
-            <Input placeholder="New Payment" value={newPayment} onChange={(e) => setNewPayment(e.target.value)} />
+            <Input placeholder="新しい支払い" value={newPayment} onChange={(e) => setNewPayment(e.target.value)} />
             <Button leftIcon={<FaPlus />} colorScheme="teal" onClick={handleAddPayment}>
-              Add Payment
+              支払いを追加
             </Button>
           </HStack>
           <Table variant="simple">
